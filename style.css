@@ -1,0 +1,84 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+.gamingbutton {
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000000;
+  background-color: #ABCDEF;
+  font-family: Times;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.gamingbutton:hover {
+  width: 35%;
+  background-color: #89abcd;
+  color: #ffffff;
+}
+.gamingbutton:disabled {
+  cursor: not-allowed;
+  background-color: #737373;
+  opacity: 25%;
+}
+.gamingbutton:disabled:hover {
+  width: 25%;
+  color: #000000;
+}
+.gamingbutton:click {
+  background-color: #9abcde;
+}
+#helpbtn {
+  cursor: pointer;
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000000;
+  background-color: #abcdef;
+  font-family: Times;
+  border: none;
+  border-radius: 4px;
+  font-size: 12pt;
+  transition: 0.5s;
+}
+#helpbtn:hover {
+  width: 35%;
+  background-color: #89abcd;
+  color: #ffffff;
+}
+p {
+  text-align: center;
+}
+.browsercontrolbtn {
+  width: 49%;
+  height: 30px;
+  cursor: pointer;
+  font-family: Times;
+  background-color: #abcdef;
+  color: #000000;
+  font-size: 15px;
+  padding: auto;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+.browsercontrolbtn:hover {
+  color: #ffffff;
+  background-color: #89abcd;
+}
+.browsercontrolbtn:disabled {
+  cursor: not-allowed;
+  background-color: #737373;
+  opacity: 25%;
+}
+.browsercontrolbtn:disabled:hover {
+  background-color: #737373;
+  opacity: 25%;
+}

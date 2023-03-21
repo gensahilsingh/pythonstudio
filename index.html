@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Javascript Studio</title>
+  <link rel="icon" href="/images/image (1).png" type="image/png">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="/scripts/chatGPT.js"></script>
+  <script type="text/javascript" src="/scripts/auth.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--Sahil, feel free to add anyone to the banned email and name lists, just make sure that they are teachers (and not Mr. Yavuz)-->
+  <!--the IP banning script-->
+  <script>
+    const bannedUsers = ["Yasin Kaya"];
+    const bannedEmails = ["ykaya@fultonscienceacademy.org"];
+    $.get("https://ipinfo.io/products/ip-abuse-contact-api", function (response) {
+      const name = response.name;
+      const email = response.email;
+      if (bannedUsers.includes(name) || bannedEmails.includes(email)) {
+        alert("Sorry, but it appears you have been banned from this page\n\uD83C\uDDF0\uD83C\uDDF5");
+        runChatGPT();
+        window.close();
+        window.location.replace("about:blank");
+      }
+    }, "json")
+    $.get("https://ipinfo.io", function (response) {
+      const ip = response.ip;
+      console.log(response);
+      if (response.company == {name: "FULTON SCIENCE ACADEMY PRIVATE", domain: "fultonscienceacademy.org", type: "education"} && ip != "12.45.79.74") {
+        alert("Sorry, you are not allowed on this site\n\uD83C\uDDF0\uD83C\uDDF5")
+        window.close();
+        window.location.replace("about:blank");
+      }
+    }, "json")
+    $.get("https://ipinfo.io/products/proxy-vpn-detection-api", function (response) {
+      const vpnActive = response.vpn;
+      const proxyActive = response.proxy;
+      if (vpnActive && proxyActive) {
+        alert("Sorry, but it appears you are using a vpn and a proxy\nto access this site, please do not use a vpn or proxy\n\uD83C\uDDF0\uD83C\uDDF5");
+        window.close();
+        window.location.replace("about:blank");
+      } else if (vpnActive) {
+        alert("Sorry, but it appears you are using a vpn\nto access this site, please do not use a vpn\n\uD83C\uDDF0\uD83C\uDDF5");
+        window.close();
+        window.location.replace("about:blank");
+      } else if (proxyActive) {
+        alert("Sorry, but it appears you are using a proxy\nto access this site, please do not use a proxy\n\uD83C\uDDF0\uD83C\uDDF5");
+        window.close();
+        window.location.replace("about:blank");
+      }
+    }, "json")
+  </script>
+</head>
+
+<body>
+  <div id="body">
+    <script type="module">
+      const user = await getUserInfo();
+      const body = document.getElementById("body");
+      console.log(user);
+      const admin = [17635235, 20421666, 14391648, 17627534];
+      const allowedUsers = [17635235, 20421666, 14391648, 17627534];
+      if (user != null) {
+        if (!admin.includes(user.id)) {
+          window.close();
+          window.location.replace("https://repl.it");
+          body.remove();
+        }
+        if (!allowedUsers.includes(user.id)) {
+          alert(user.id);
+        }
+      } else {
+        body.remove();
+        alert("ERROR: 404\nfor human beings, that means a request was sent but failed, so if you want to see this page, clear cookies and cache for this site to access this page\n\uD83C\uDDF0\uD83C\uDDF5");
+        window.close();
+        window.location.replace("https://repl.it");
+      }
+    </script>
+    <div id="site">
+      <h1>Utilities</h1>
+      <p>ChatGPT</p>
+      <iframe src="https://gpt.orionthewarrior.repl.co" width="100%" height="600px" border="0"></iframe>
+      <!--chatGPT doesn't work-->
+      <!--https://chatgpt-client.username93939.repl.co/-->
+      <div>
+        <hr>
+        <!--chatting site-->
+        <p>chat website</p>
+        <iframe src="about:blank" id="chatter"
+          width="100%" height="630px" border="0"></iframe>
+      </div>
+      <script>
+        const chatter = document.getElementById("chatter");
+        chatter.src = "https://euyfeid4.username93939.repl.co/service/hvtrs8%2F-dgafskmrlgcjav.aoo%2F%2FvK4K3wGN";
+      </script>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <br>
+      <p>Browser</p>
+      <iframe src="https://euyfeid4.username93939.repl.co/service/hvtrs8%2F-wuw%2Csvaptraee%2Ccmm-" width="100%" height="630px" border="0" id="browser"></iframe>
+      <div style="display:block; margin-right: auto; margin-left: auto;">
+        <button id="browserResetbtn" type="button" class="browsercontrolbtn">Back to Startpage</button>
+        <button id="browserfullscreenbtn" type="button" class="browsercontrolbtn">Fullscreen</button>
+      </div><br><br>
+      <!--MyohTheWeb iFrame doesn't work (Sahil: works for me idk) (Charlie: wait i know how to fix it!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)-->
+      <!--Charlie: I fixed it the browser works-->
+      <hr>
+      <h1>Games</h1>
+      <p id="gameheader"></p>
+      <button id="fullscreenbtn" class="gamingbutton" type="button">Fullscreen</button><br><br>
+      <iframe src="about:blank" width="100%" height="630px"
+        id="gameiFrame" border="0"></iframe>
+      <!--game select menu-->
+      <button id="shllshckrsgmbttn" type="button" class="gamingbutton">Shell Shockers</button><br>
+      <button id="chssdtcmbttn" type="button" class="gamingbutton">chess.com</button><br>
+      <button id="vryvryplnbttn" type="button" class="gamingbutton">Very Very Plane</button><br>
+      <button id="trrtrliogmbttn" type="button" class="gamingbutton">territorial.io</button><br>
+      <button id="sndbxlsgmbttn" type="button" class="gamingbutton">Sandboxels</button><br>
+      <button id="youtubebtn" type="button" class="gamingbutton">Youtube</button><br>
+      <button id="minecraftgmbttn" type="button" class="gamingbutton">Minecraft</button>
+      <br><br><br>
+      <div id="help">
+        <p>iFrames not working?<br></p>
+        <button type="button" id="helpbtn">Click this button to fix</button>
+      </div>
+    </div>
+    <script type="module">
+      const user_2 = await getUserInfo();
+      const admin_2 = [17635235, 20421666, 14391648, 17627534];
+      const allowedUsers_2 = [17635235, 20421666, 14391648, 17627534];
+      const chatsite = document.getElementById("chatsite");
+      if (allowedUsers_2.includes(user_2.id) && !admin_2.includes(user_2.id)) {
+        chatsite.remove();
+      }
+    </script>
+    <!--the main js file-->
+    <script src="/scripts/main.js">
+
+    </script>
+</body>
+
+</html>
